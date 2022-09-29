@@ -14,7 +14,8 @@ defmodule Yahtzee do
     %{
     "Three of a kind": Enum.sum(dice),
     "Four of a kind": Enum.sum(dice),
-    "Full house": 25
+    "Full house": 25,
+    "Small straight": 30
     }
   end
 
