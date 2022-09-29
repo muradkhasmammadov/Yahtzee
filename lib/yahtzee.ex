@@ -16,7 +16,8 @@ defmodule Yahtzee do
     "Four of a kind": Enum.sum(dice),
     "Full house": 25,
     "Small straight": 30,
-    "Large straight": 40
+    "Large straight": 40,
+    Yahtzee: 50
     }
   end
 
