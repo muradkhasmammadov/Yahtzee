@@ -24,4 +24,12 @@ defmodule YahtzeeLowerSectionTest do
     end)
   end
 
+  test "Identify 'Full house' with every face" do
+    Enum.map(1..6, fn _ ->
+      [x,y] =
+        Enum.shuffle(1..6)
+        |> Enum.take(2)
+      assert %{"Full house": 25} = Yahtzee.score_lower([x,x,x,y,y] |> Enum.shuffle)
+    end)
+  end
 end
