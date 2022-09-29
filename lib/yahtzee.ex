@@ -17,7 +17,8 @@ defmodule Yahtzee do
     "Full house": 25,
     "Small straight": 30,
     "Large straight": 40,
-    Yahtzee: 50
+    Yahtzee: 50,
+    Chance: Enum.sum(dice)
     }
   end
 
