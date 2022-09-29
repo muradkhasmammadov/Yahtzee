@@ -52,4 +52,10 @@ defmodule YahtzeeLowerSectionTest do
       assert %{"Large straight": 40} = Yahtzee.score_lower([x,x+1,x+2,x+3,x+4] |> Enum.shuffle)
     end)
   end
+
+  test "Identify 'Yahtzee'" do
+    Enum.map(1..6, fn n ->
+      assert %{Yahtzee: 50} = Yahtzee.score_lower(List.duplicate(n,5))
+    end)
+  end
 end
