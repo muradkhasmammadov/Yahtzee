@@ -32,4 +32,24 @@ defmodule YahtzeeLowerSectionTest do
       assert %{"Full house": 25} = Yahtzee.score_lower([x,x,x,y,y] |> Enum.shuffle)
     end)
   end
+
+  test "Identify 'Small straight' with all cases" do
+    Enum.map(1..6, fn _ ->
+      [x] =
+        Enum.shuffle(1..3)
+        |> Enum.take(1)
+      [y] = Enum.shuffle(3..4)
+        |> Enum.take(1)
+      assert %{"Small straight": 30} = Yahtzee.score_lower([x,x+1,x+2,x+3,y] |> Enum.shuffle)
+    end)
+  end
+
+  # test "Identify 'Large straight' with every face" do
+  #   Enum.map(1..6, fn _ ->
+  #     [x,y] =
+  #       Enum.shuffle(1..6)
+  #       |> Enum.take(2)
+  #     assert %{"Full house": 30} = Yahtzee.score_lower([x,x,x,y,y] |> Enum.shuffle)
+  #   end)
+  # end
 end
