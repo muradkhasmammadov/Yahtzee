@@ -30,4 +30,12 @@ defmodule YahtzeeUpperSectionTest do
     Enum.map(1..5, fn n -> assert %{Sixes: ^n} = Yahtzee.score_upper(generate(6, n)) end)
   end
 
+  test "Identify 'Four of a kind' with every face" do
+    Enum.map(1..6, fn (dice_face) ->
+      dices = generate(dice_face, 4)
+      sum = Enum.sum(dices)
+      assert %{"Four of a kind": ^sum} = Yahtzee.score_lower(dices)
+    end)
+  end
+
 end
