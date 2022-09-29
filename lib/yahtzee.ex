@@ -12,7 +12,8 @@ defmodule Yahtzee do
 
   def score_lower (dice) do
     %{
-    "Three of a kind": Enum.sum(dice)
+    "Three of a kind": Enum.sum(dice),
+    "Four of a kind": Enum.sum(dice)
     }
   end
 
