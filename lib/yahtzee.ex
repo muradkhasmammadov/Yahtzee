@@ -1,18 +1,5 @@
 defmodule Yahtzee do
-  @moduledoc """
-  Documentation for `Yahtzee`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Yahtzee.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def score_upper(dice) do
+    %{Ones: length(Enum.filter(dice, fn e -> e == 1 end))}
   end
 end
