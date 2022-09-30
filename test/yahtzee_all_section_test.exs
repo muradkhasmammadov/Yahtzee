@@ -39,7 +39,7 @@ defmodule YahtzeeAllSectionTest do
     assert ^upper_output = Yahtzee.score_upper(dice)
 
     lower_output = %{
-      "Three of a kind": 0,
+      "Three of a kind": 6,
       "Four of a kind": 6,
       "Full house": 0,
       "Small straight": 0,
@@ -49,5 +49,32 @@ defmodule YahtzeeAllSectionTest do
       }
       assert ^lower_output = Yahtzee.score_lower(dice)
     end
+
+
+    test "Identify different categories for same dice config Yahtzee" do
+    dice = [5,5,5,5,5]
+    upper_output = %{
+      Ones: 0,
+      Twos: 0,
+      Threes: 0,
+      Fours: 0,
+      Fives: 5,
+      Sixes: 0
+    }
+
+    assert ^upper_output = Yahtzee.score_upper(dice)
+
+    lower_output = %{
+      "Three of a kind": 25,
+      "Four of a kind": 25,
+      "Full house": 0,
+      "Small straight": 0,
+      "Large straight": 0,
+      Yahtzee: 50,
+      Chance: 25
+      }
+      assert ^lower_output = Yahtzee.score_lower(dice)
+    end
+
 
 end
