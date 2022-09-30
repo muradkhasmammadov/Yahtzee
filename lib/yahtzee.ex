@@ -18,8 +18,10 @@ defmodule Yahtzee do
     "Small straight": 30,
     "Large straight": 40,
     Yahtzee: 50,
-    Chance: Enum.sum(dice)
+    Chance: Enum.sum(dice),
     }
+
+
   end
 
 end
