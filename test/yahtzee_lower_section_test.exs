@@ -70,33 +70,4 @@ defmodule YahtzeeLowerSectionTest do
     end)
   end
 
-
-  test "Identify different categories for same face 1" do
-    dice = [2,2,5,5,5]
-    upper_output = %{
-      Ones: 0,
-      Twos: 2,
-      Threes: 0,
-      Fours: 0,
-      Fives: 3,
-      Sixes: 0
-    }
-    assert ^upper_output = Yahtzee.score_upper(dice)
-
-    lower_output = %{
-    "Three of a kind": 19,
-    "Four of a kind": 0,
-    "Full house": 25,
-    "Small straight": 0,
-    "Large straight": 0,
-    Yahtzee: 0,
-    Chance: 19
-    }
-    assert ^lower_output = Yahtzee.score_lower(dice)
-  end
-
-
-
-
-
 end
